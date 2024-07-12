@@ -10,7 +10,7 @@ const MainContainer = () => {
 
   const length = movies.length
 
-  const moviOnBackground = movies[Math.floor(Math.random() * length)];
+  const moviOnBackground = movies[Math.floor(Math.random() * length)+1];
 
   const { original_title, overview, id } = moviOnBackground;
 
