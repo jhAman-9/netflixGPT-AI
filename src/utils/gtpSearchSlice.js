@@ -8,7 +8,7 @@ const gptSearchSlice = createSlice({
     tmdbMoviesResults : null
     },
     reducers: {
-        toggleGptSearchView: (state, action) => {
+        toggleGptSearchView: (state) => {
             state.showGptSearch = !state.showGptSearch
       },
       // storing gpt suggested movies which are fetch from TMDB api
