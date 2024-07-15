@@ -12,12 +12,14 @@ const MainContainer = () => {
 
   const moviOnBackground = movies[Math.floor(Math.random() * length) + 1];
 
-  const { original_title, overview, id } = moviOnBackground;
-
+  const movi = moviOnBackground;
+  
+  console.log(movi);
+  
   return (
     <div>
-      <VideoTitle title={original_title} overview={overview} />
-      <VideoBackground movieId={id} />
+      <VideoTitle title={movi?.original_title} overview={movi?.overview} />
+      <VideoBackground movieId={movi?.id} />
     </div>
   );
 };
