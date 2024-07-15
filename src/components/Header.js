@@ -32,30 +32,30 @@ const Header = () => {
   };
 
   // Store User Detail in Redux Store to display sign in user Info
-  // useEffect(() => {
-  //   onAuthStateChanged(auth, (user) => {
-  //     // When User Sign in or Sign up
-  //     if (user) {
-  //       const { uid, email, displayName, photoURL } = user;
-  //       dispatch(
-  //         addUser({
-  //           uid: uid,
-  //           email: email,
-  //           displayName: displayName,
-  //           photoURL: photoURL,
-  //         })
-  //       );
-  //       // if sign in or sign up them navigate to browse route
-  //       navigate("/browse")
-  //     }
-  //     // When User Sign Out
-  //     else {
-  //       dispatch(removeUser());
-  //       // navigate to sign in sign up page
-  //       navigate("/")
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    onAuthStateChanged(auth, (user) => {
+      // When User Sign in or Sign up
+      if (user) {
+        const { uid, email, displayName, photoURL } = user;
+        dispatch(
+          addUser({
+            uid: uid,
+            email: email,
+            displayName: displayName,
+            photoURL: photoURL,
+          })
+        );
+        // if sign in or sign up them navigate to browse route
+        navigate("/browse")
+      }
+      // When User Sign Out
+      else {
+        dispatch(removeUser());
+        // navigate to sign in sign up page
+        navigate("/")
+      }
+    });
+  }, []);
 
   useEffect(() => {
     const unsubscriber = onAuthStateChanged(auth, (user) => {
