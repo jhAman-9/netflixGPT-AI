@@ -27,7 +27,7 @@ const GptSearchBar = () => {
 
     const gptQuery =
       "Act as a Movie Recommendation system and suggest some movies for the given query :" +
-      gptSearchInput.current.value +
+      "Hidni Indian Retro Movies" +
       ". Only give the name of 5 movies, comma seperated like the example result given ahead. Example Result: Don, Gadar, Golmaal, Koi mil Gaya, Krish";
 
     const gptResult = await openai.chat.completions.create({
